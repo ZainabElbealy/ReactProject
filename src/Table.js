@@ -16,53 +16,46 @@ export default class MyTable extends Component{
     };
 
     increment =()=>{
+      //console.log('z')
         this.setState({
             count:this.state.Products.count + 1,
-        })
+        });
+    };
+    deccrement =()=>{
+      //console.log('z')
+        this.setState({
+            count:this.state.Products.count - 1,
+        });
+    };
+
+
+
+    delete = ()=>{
+      
     }
     render(){
         
         return(
             <Table responsive>
-      
+      {this.state.Products.map((prod)=>{
+        //console.log(prod.id)
+        return(
       <tbody >
-      <tr>
-          <td className="fs-3 fw-bolder w-25" >Chipsy</td>
-          <td >0</td>
-        <td><Button variant="danger w-50" >Delete</Button></td>
+      <tr key={prod.id}>
+          <td className="fs-3 fw-bolder w-25" >{prod.name}</td>
+          <td>{prod.count}</td>
+        <td><Button variant="danger w-50" onClick={this.delete}>Delete</Button></td>
         <td><Button variant="success w-50" onClick={this.increment}>+</Button></td>
-        <td><Button variant="warning w-50 h-50">-</Button></td>
+        <td><Button variant="warning w-50 h-50" onClick={this.decrement}>-</Button></td>
           
         </tr>
-        <tr>
-          <td className="fs-3 fw-bolder w-25">Molto</td>
-          <td>0</td>
-        <td><Button variant="danger w-50">Delete</Button></td>
-        <td><Button variant="success w-50">+</Button></td>
-        <td><Button variant="warning w-50 h-50">-</Button></td>
-          
-        </tr>
-        <tr>
-          <td className="fs-3 fw-bolder">Chooclate</td>
-          <td>0</td>
-        <td><Button variant="danger w-50">Delete</Button></td>
-        <td><Button variant="success w-50">+</Button></td>
-        <td><Button variant="warning w-50 h-50">-</Button></td>
-        </tr>
-        <tr>
-          <td className="fs-3 fw-bolder">Pepsi</td>
-          <td>0</td>
-        <td><Button variant="danger w-50">Delete</Button></td>
-        <td><Button variant="success w-50">+</Button></td>
-        <td><Button variant="warning w-50 h-50">-</Button></td>
-        </tr>
-      </tbody>
+        
+      </tbody>)
+      })}
     </Table>
         )
         
     }
- }
-//{this.state.Products.map((prod)=>{
-//   //console.log(prod.id)
-//   return()
-// })}
+}
+
+

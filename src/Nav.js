@@ -14,7 +14,7 @@ class Nav extends Component{
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text >
-            <Badge bg="dark">0</Badge> 
+            <Badge bg="dark">4</Badge> 
             </Navbar.Text>
           </Navbar.Collapse>
         </Container>
